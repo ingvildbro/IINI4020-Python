@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nyheter - Skjema</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Registrer en ny nyhet</h1>
+</header>
+
+<div class="container">
+    <form action="index.html">
+        <label for="newsHeading">Overskrift som nyheten skal ha:</label>
+        <input type="text" name="heading" id="newsHeading">
+
+        <label for="newsText">Skriv inn selve nyheten:</label>
+        <textarea id="newsText"></textarea>
+
+        <label for="newsPublishedBy">Publisert av:</label>
+        <select id="newsPublishedBy">
+            <option value="svend">Svend Andreas</option>
+            <option value="walter">Walter</option>
+            <option value="per">Per</option>
+            <option value="grethe">Grethe</option>
+        </select>
+
+        <button type="button">Lagre nyheten</button>
+    </form>
+</div>
+
+</body>
+</html>
