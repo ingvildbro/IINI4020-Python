@@ -1,5 +1,130 @@
 html, body {
-
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 }
 
 
+header {
+    padding: .5rem 10%;
+    background-color: #263238;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+.container {
+    padding: 1.5rem 10%;
+}
+
+form {
+    display: grid;
+    grid-template-areas:
+            'item-top'
+            'item-mid'
+            'item-bot';
+    grid-row-gap: 24px;
+    align-content: center;
+}
+
+
+.item-top { grid-area: item-top; }
+.item-mid { grid-area: item-mid; }
+
+.item-bot {
+    grid-area: item-bot;
+    display: grid;
+
+    grid-template-columns: 60% 30%;
+
+    grid-template-areas:
+            "a a"
+            "b c";
+
+    grid-gap: 0 10%;
+}
+
+.item-a {
+    grid-area: a;
+    justify-self: start;
+}
+
+.item-b {
+    grid-area: b;
+    justify-self: start;
+}
+
+.item-c {
+    grid-area: c;
+    justify-self: end;
+}
+
+
+
+form label {
+    display: block;
+}
+
+select, button {
+    padding: 0 16px;
+    width: 100%;
+    margin: .25rem 0;
+    height: 36px;
+    min-width: 128px;
+}
+
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border: 2px solid #90A4AE;
+}
+
+input, textarea, select {
+    font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+
+    border-radius: 5px;
+    border: 2px solid #B0BEC5;
+    background: none;
+}
+
+input, textarea {
+    padding: .5rem 1rem;
+    margin: .25rem 0;
+    width: calc(100% - 2rem);
+}
+
+select {
+    min-width: 156px;
+    font-size: 0.875rem;
+    overflow: hidden;
+}
+
+
+button {
+    padding: 0 16px;
+    min-width: 64px;
+    height: 36px;
+
+    font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    text-transform: uppercase;
+    font-size: .875rem;
+
+    background-color: #263238;
+    color: #ffffff;
+
+    border: 0;
+    outline: 0;
+
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.24);
+}
+
+button:hover {
+    background-color: #37474F;
+}
