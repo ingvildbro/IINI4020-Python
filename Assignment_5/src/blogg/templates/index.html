@@ -13,7 +13,7 @@
 </header>
 
 <div class="container">
-    <form action="" class="form-container">
+    <form action="{{ url_for('add_entry') }}" method=post class="form-container">
 
         <div class="item-top">
             <label for="newsHeading">Overskrift som nyheten skal ha:</label>
@@ -36,10 +36,17 @@
                 <option value="grethe">Grethe</option>
             </select>
 
-            <button type="button" class="item-c">Lagre nyheten</button>
+            <button type="submit" class="item-c" id="submitBtn">Lagre nyheten</button>
         </div>
     </form>
-</div>
 
+    <hr>
+
+    <div class="news-container">
+        {% block nyheter %}
+            {% include "news.html" %}
+        {% endblock %}
+    </div>
+</div>
 </body>
 </html>

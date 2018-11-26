@@ -29,7 +29,7 @@ def add_entry():
     db = get_db()
     db.execute(
         "insert into nyheter (tittel, nyhet, forfatter, dato) "
-        "values (?, ?, ?, datetime('now', 'localtime'))",
+        "values(?, ?, ?, datetime('now', 'localtime'))",
         [request.form['tittel'],
          request.form['nyhet'],
          request.form['forfatter']]
