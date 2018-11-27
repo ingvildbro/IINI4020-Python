@@ -1,0 +1,28 @@
+{% block content %}
+    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+
+        <div class="item-top">
+            <label for="newsTitle">Overskrift som nyheten skal ha:</label>
+            <input type="text" name="tittel" id="newsTitle">
+        </div>
+
+
+        <div class="item-mid">
+            <label for="newsText">Skriv inn selve nyheten:</label>
+            <textarea name="nyhet" id="newsText" rows="7"></textarea>
+        </div>
+
+
+        <div class="item-bot">
+            <label for="newsPublishedBy" class="item-a">Publisert av:</label>
+            <select name="forfatter" id="newsPublishedBy" class="item-b">
+                <option value="Ingvild">Ingvild</option>
+                <option value="Walter">Walter</option>
+                <option value="Per">Per</option>
+                <option value="Grethe">Grethe</option>
+            </select>
+
+            <button type="submit" class="item-c" id="submitBtn">Lagre nyheten</button>
+        </div>
+    </form>
+{% endblock %}

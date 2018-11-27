@@ -38,6 +38,10 @@ def add_entry():
     return redirect(url_for('index'))
 
 
+# ========================
+# ====    Database    ====
+# ========================
+
 # connect to the database
 def connect_db():
     """Connects to the database."""
@@ -69,6 +73,8 @@ def close_db(error):
         g.sqlite_db.close()
 
 
+# ------------------------------------
+# Run application
 if __name__ == '__main__':
     init_db()
     app.run()

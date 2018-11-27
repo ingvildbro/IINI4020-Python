@@ -1,0 +1,28 @@
+===============================================================
+====  Øving 6: Validering, bruk av jQuery og distribusjon  ====
+===============================================================
+
+------------------------------------
+--  Oppgave 1: Lag en login form  --
+------------------------------------
+    -   Ta utgangspunkt i oppgave 2 i øving 5 og lag en login form slik at bruker av nyhets-skjemaet
+        må logge inn med brukernavn og passord før nyheter kan legges inn fra dette skjemaet.
+
+    -   Lag en egen mal for login formen og implementer sessions.
+
+    -   Valider at feltet for brukernavn og passord er fylt ut i login formen
+
+------------------------------------
+--   Oppgave 2: Flask og jQuery   --
+------------------------------------
+I leksjonen så vi litt på hvordan jQuery fungerer sammen med Flask.
+
+    -   Ta utgangspunkt i oppgave 2 i øving 5.
+
+    -   jQuery implementeres sammen med Flask og brukes for å kunne slette en rad
+        i databasen som ble opprettet i øving 5.
+
+    -   Løsningen skal fungere slik at vi skriver et innlegg i bloggen og lagrer det.
+
+    -   Deretter skal nyheten vises og vi skal kunne klikke på nyheten
+        som vises for å få den fjernet fra databasen.
