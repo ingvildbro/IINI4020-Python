@@ -27,9 +27,8 @@ def index():
 def add_entry():
     """Adds new data to the database."""
     db = get_db()
-    db.execute(
-        "insert into nyheter (tittel, nyhet, forfatter, dato) "
-        "values(?, ?, ?, datetime('now', 'localtime'))",
+    db.execute('insert into nyheter (tittel, nyhet, forfatter, dato) '
+               'values(?, ?, ?, datetime(\'now\', \'localtime\'))',
         [request.form['tittel'],
          request.form['nyhet'],
          request.form['forfatter']]

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nyheter - Blogg</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Blogg</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
@@ -13,27 +13,27 @@
 </header>
 
 <div class="container">
-    <form action="{{ url_for('add_entry') }}" method=post class="form-container">
+    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
 
         <div class="item-top">
-            <label for="newsHeading">Overskrift som nyheten skal ha:</label>
-            <input type="text" id="newsHeader">
+            <label for="newsTitle">Overskrift som nyheten skal ha:</label>
+            <input type="text" name="tittel" id="newsTitle">
         </div>
 
 
         <div class="item-mid">
             <label for="newsText">Skriv inn selve nyheten:</label>
-            <textarea id="newsText" rows="7"></textarea>
+            <textarea name="nyhet" id="newsText" rows="7"></textarea>
         </div>
 
 
         <div class="item-bot">
             <label for="newsPublishedBy" class="item-a">Publisert av:</label>
-            <select id="newsPublishedBy" class="item-b">
-                <option value="svend">Svend Andreas</option>
-                <option value="walter">Walter</option>
-                <option value="per">Per</option>
-                <option value="grethe">Grethe</option>
+            <select name="forfatter" id="newsPublishedBy" class="item-b">
+                <option value="Ingvild">Ingvild</option>
+                <option value="Walter">Walter</option>
+                <option value="Per">Per</option>
+                <option value="Grethe">Grethe</option>
             </select>
 
             <button type="submit" class="item-c" id="submitBtn">Lagre nyheten</button>
@@ -42,10 +42,16 @@
 
     <hr>
 
-    <div class="news-container">
-        {% block nyheter %}
-            {% include "news.html" %}
-        {% endblock %}
+    <div class="news-container entries">
+        {% for entry in entries %}
+            <h2>{{ entry.tittel }}</h2>
+            <p>{{ entry.nyhet|safe }}</p>
+            <p>{{ entry.forfatter }}</p>
+            <p>{{ entry.dato }}</p>
+
+        {% else %}
+            <h3>No entries yet. Add some!</h3>
+        {% endfor %}
     </div>
 </div>
 </body>

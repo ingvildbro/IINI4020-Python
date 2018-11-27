@@ -5,4 +5,4 @@ create table nyheter (
   nyhet text not null,
   forfatter text not null,
   dato text not null
-)
+);
