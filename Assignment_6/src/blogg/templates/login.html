@@ -1,20 +1,24 @@
 <!doctype html>
-<html>
+<html lang="no">
     <head>
-        <title>Login.html</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Logg inn | Nyhetsblogg</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-    {% from "formhelpers.html" import render_field %}
-        <form class="grid-container" method="post" action="/login">
-            <h1>Please log in</h1>
-            <dl>
-                {{ form.csrf_token }}
-                {{ render_field(form.username, class_to_use="grid-item input") }}
-                {{ render_field(form.password, class_to_use="grid-item input") }}
-            </dl>
-            <input class="button" type="submit" value="Log in">
-        </form>
-    </body>
+    <div>
 
+    {% from "formhelpers.html" import render_field %}
+        <form class="login-form" method="post" action="/login">
+            <h1>Logg inn</h1>
+            <dl>
+                {{ render_field(form.username) }}
+                {{ render_field(form.password) }}
+            </dl>
+            <button type="submit" id="loginBtn">Logg inn</button>
+        </form>
+
+    </div>
+    </body>
 </html>

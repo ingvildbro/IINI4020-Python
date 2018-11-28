@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% block news %}
+    <div class="news-container entries">
+        {% for entry in entries %}
+            <h2>{{ entry.tittel }}</h2>
+            <p>{{ entry.nyhet|safe }}</p>
+            <p>{{ entry.forfatter }}</p>
+            <p>{{ entry.dato }}</p>
 
-</body>
-</html>
+        {% else %}
+            <h3>No entries yet. Add some!</h3>
+        {% endfor %}
+    </div>
+{% endblock %}

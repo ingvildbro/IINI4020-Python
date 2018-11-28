@@ -17,11 +17,18 @@ header h1 {
     color: #ffffff;
 }
 
+
+h2 {
+    font-size: 1.875rem;
+    font-weight: normal;
+    color: #000000;
+}
+
 .container {
     padding: 1.5rem 10%;
 }
 
-form {
+#newsForm {
     display: grid;
     grid-template-areas:
             'item-top'
